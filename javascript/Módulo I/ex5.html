@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso Javascript: Ex 5</title>
+    </head>
+
+    <body>
+        <script>
+            var usuarios = [
+                {
+                    nome: "Diego",
+                    habilidades: ["Javascript", "ReactJS", "React Native"]
+                },
+                {
+                    nome: "Gabriel",
+                    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                },
+            ];
+
+            function mostrarHabilidade(usuario) {
+                console.log(`O ${usuario.nome} possui as habilidades: ${usuario.habilidades.join(', ')}`);
+            }
+
+            usuarios.forEach(usuario => console.log(mostrarHabilidade(usuario)));
+        </script>
+    </body>
+</html>
