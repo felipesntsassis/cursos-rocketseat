@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso Javascript: Ex 3</title>
+    </head>
+    <body>
+        <div id="app">
+            <button>Criar Quadrado</button>
+        </div>
+        <script>
+            function createSquare() {
+                var boxElement = document.createElement('div');
+                boxElement.setAttribute('class', 'box');
+                boxElement.style.width = '100px';
+                boxElement.style.height = '100px';
+                boxElement.style.backgroundColor = '#f00';
+                boxElement.style.marginTop = '15px';
+                boxElement.onmouseover = function () {
+                    this.style.backgroundColor = getRandomColor();
+                }
+
+                var appElement = document.getElementById('app');
+                appElement.appendChild(boxElement);
+            }
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+
+                for (var i = 0; i < 6; i ++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+
+                return color;
+            }
+
+            var btnElement = document.querySelector('button');
+            btnElement.onclick = function () {
+                createSquare();
+            }
+        </script>
+    </body>
+</html>

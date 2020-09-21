@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso Javascript: Ex 1</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <button>Criar Quadrado</button>
+        </div>
+        <script>
+            function createSquare() {
+                var squareElement = document.createElement('div');
+                squareElement.style.width = '100px';
+                squareElement.style.height = '100px';
+                squareElement.style.backgroundColor = '#f00';
+                squareElement.style.marginTop = '15px';
+                
+                var appElement = document.getElementById('app');
+                appElement.appendChild(squareElement);
+            }
+
+            var btnElement = document.querySelector('button');
+            btnElement.onclick = function () {
+                createSquare();
+            }
+        </script>
+    </body>
+</html>

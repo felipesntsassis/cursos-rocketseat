@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Javascript</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" name="nome" id="nome">
+        <button class="botao">Adicionar</button>
+    </div>
+    <script>
+        var inputElement = document.getElementById('nome');
+        // var inputElement = document.getElementsByTagName('nome')[0];
+        // var inputElement = document.getElementsByClassName('nome');
+        // var inputElement = document.querySelectorAll('input[name=nome]');
+        
+        var inputElement = document.querySelector('input[name=nome]');
+        console.log(inputElement);
+
+        var btnElement = document.querySelector('button.botao');
+        btnElement.onclick = function () {
+            var text = inputElement.value;
+            alert(text);
+        }
+    </script>
+</body>
+
+</html>
