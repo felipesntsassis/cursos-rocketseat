@@ -136,7 +136,18 @@
 // const usuario2 = { ...usuario1, nome: 'Fernanda', idade: 37 };
 // console.log(usuario1, usuario2);
 
+// const nome = 'Felipe';
+// const idade = 35;
+
+// console.log(`Meu nome é ${nome} e tenho ${idade} anos`);
+
 const nome = 'Felipe';
 const idade = 35;
 
-console.log(`Meu nome é ${nome} e tenho ${idade} anos`);
+const usuario = {
+    nome,
+    idade,
+    empresa: 'Pedido Agora'
+};
+
+console.log(usuario);

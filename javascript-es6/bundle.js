@@ -99,6 +99,14 @@
 // };
 // const usuario2 = { ...usuario1, nome: 'Fernanda', idade: 37 };
 // console.log(usuario1, usuario2);
+// const nome = 'Felipe';
+// const idade = 35;
+// console.log(`Meu nome é ${nome} e tenho ${idade} anos`);
 var nome = 'Felipe';
 var idade = 35;
-console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos"));
+var usuario = {
+  nome: nome,
+  idade: idade,
+  empresa: 'Pedido Agora'
+};
+console.log(usuario);
