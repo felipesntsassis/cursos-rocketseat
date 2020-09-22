@@ -74,7 +74,27 @@
 //     return a + b;
 // }
 
-const soma = (a = 3, b = 6) => a + b;
+// const soma = (a = 3, b = 6) => a + b;
 
-console.log(soma(1));
-console.log(soma());
+// console.log(soma(1));
+// console.log(soma());
+
+const usuario = {
+    nome: 'Felipe',
+    idade: 35,
+    endereco: {
+        cidade: 'Ourinhos',
+        estado: 'SP'
+    }
+};
+
+console.log(usuario);
+const { nome, idade, endereco: { cidade } } = usuario;
+
+console.log(nome, idade, cidade);
+
+function mostraNome({ nome, idade }) {
+    console.log(nome, idade);
+}
+
+mostraNome(usuario);
