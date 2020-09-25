@@ -8,9 +8,9 @@
 // console.log(Usuario.info());
 // console.log(IdadeUsuario);
 
-const minhaPromise = () => new Promise((resolve, reject) => {
-    setTimeout(() => { resolve('OK'); }, 2000);
-});
+// const minhaPromise = () => new Promise((resolve, reject) => {
+//     setTimeout(() => { resolve('OK'); }, 2000);
+// });
 
 // minhaPromise.then(response => {
 //     console.log(response);
@@ -45,3 +45,29 @@ class Api {
 
 Api.getUserInfo('felipesntsassis');
 Api.getUserInfo('felipesntsassisteste');
+
+
+// Exercício Módulo 3
+const delay = () => new Promise(resolve => setTimeout(resolve), 1000);
+
+async function umPorSegundo() {
+    await delay().then(() => console.log('1s'));
+    await delay().then(() => console.log('2s'));
+    await delay().then(() => console.log('3s'));   
+}
+
+umPorSegundo();
+
+class GitHub {
+    static async getRepositories(repo) {
+        try {
+            const response = await axios.get(`https://api.github.com/repos/${repo}`);
+            console.log(response.data);
+            
+        } catch (err) {
+            console.log('Repositório não encontrado');
+        }
+    }
+}
+
+GitHub.getRepositories('cursos-rocketseat');
