@@ -22,10 +22,26 @@ const minhaPromise = () => new Promise((resolve, reject) => {
 //     console.log(await minhaPromise());
 // }
 
-const executaPromise = async () => {
-    console.log(await minhaPromise());
-    console.log(await minhaPromise());
-    console.log(await minhaPromise());
+// const executaPromise = async () => {
+//     console.log(await minhaPromise());
+//     console.log(await minhaPromise());
+//     console.log(await minhaPromise());
+// }
+
+// executaPromise();
+
+import axios from 'axios';
+
+class Api {
+    static async getUserInfo(username) {
+        try {
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+            console.log(response);
+        } catch (err) {
+            console.warn(err);
+        }
+    }
 }
 
-executaPromise();
+Api.getUserInfo('felipesntsassis');
+Api.getUserInfo('felipesntsassisteste');
