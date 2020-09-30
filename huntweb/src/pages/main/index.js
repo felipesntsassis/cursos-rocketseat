@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './styles.css';
 import api from "../../services/api";
 
 export default class Main extends Component {
+
 	state = {
 		products: [],
         productInfo: {},
@@ -41,7 +44,7 @@ export default class Main extends Component {
 					<article key={product._id}>
 						<strong>{product.title}</strong>
 						<p>{product.description}</p>
-						<a href="#">Acessar</a>
+						<Link to={`/products/${product._id}`}>Acessar</Link>
 					</article>
 				))}
 				<div className="actions">
@@ -54,7 +57,7 @@ export default class Main extends Component {
 
 	prevPage = (event) => {
 		event.preventDefault();
-		const { page, productInfo } = this.state;
+		const { page } = this.state;
 
 		if (page === 1) return;
 
